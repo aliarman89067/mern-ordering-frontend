@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function OrderItemCard({ order }: Props) {
-  const { updateRestaurentStatus, isLoading } = useUpdateMyRestaurentOrder();
+  const { updateRestaurentStatus } = useUpdateMyRestaurentOrder();
   const [orderStatus, setOrderStatus] = useState<OrderStatus>(order.status);
 
   console.log(order.status);

@@ -9,7 +9,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import ManageRestaurentForm from "@/forms/manage-restaurent-form/ManageRestaurentForm";
 
 export default function ManageRestaurentPage() {
-  const { orders, isLoading } = useGetMyRestaurentOrder();
+  const { orders } = useGetMyRestaurentOrder();
   const { createRestaurent, isLoading: isCreateLoading } =
     useCreateMyRestaurent();
   const { restaurent } = useGetMyRestaurent();
