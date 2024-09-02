@@ -7,6 +7,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useFormContext } from "react-hook-form";
 
 export default function ImageSection() {
@@ -23,13 +24,15 @@ export default function ImageSection() {
       </div>
       <div className="flex flex-col gap-8 md:w-[50%]">
         {existingImageUrl && (
-          <AspectRatio ratio={16 / 9}>
-            <img
-              src={existingImageUrl}
-              alt="Restaurent Image"
-              className="rounded-md object-cover h-full w-full"
-            />
-          </AspectRatio>
+          <Label htmlFor="image-file" className="cursor-pointer">
+            <AspectRatio ratio={16 / 9}>
+              <img
+                src={existingImageUrl}
+                alt="Restaurent Image"
+                className="rounded-md object-cover h-full w-full"
+              />
+            </AspectRatio>
+          </Label>
         )}
         <FormField
           control={control}
@@ -38,6 +41,7 @@ export default function ImageSection() {
             <FormItem>
               <FormControl>
                 <Input
+                  id="image-file"
                   className="bg-white"
                   type="file"
                   accept=".jpg, .jpeg, .png"

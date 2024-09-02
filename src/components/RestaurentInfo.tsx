@@ -23,12 +23,13 @@ export default function RestaurentInfo({ restaurent }: Props) {
           {restaurent.city}, {restaurent.country}
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex">
+      <CardContent className="flex flex-wrap">
         {restaurent.cuisines.map((cuisine, index) => (
-          <span className="flex">
-            <span>{cuisine}</span>
+          <div className="flex">
+            {cuisine}
+
             {index < restaurent.cuisines.length - 1 && <Dot />}
-          </span>
+          </div>
         ))}
       </CardContent>
     </Card>

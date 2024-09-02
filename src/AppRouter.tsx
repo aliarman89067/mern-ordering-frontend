@@ -7,6 +7,7 @@ import ProtectedRoutes from "./auth/ProtectedRoutes";
 import ManageRestaurentPage from "./pages/ManageRestaurentPage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
+import OrderStatusPage from "./pages/OrderStatusPage";
 
 export default function AppRouter() {
   return (
@@ -37,6 +38,14 @@ export default function AppRouter() {
         }
       />
       <Route element={<ProtectedRoutes />}>
+        <Route
+          path="/order-status"
+          element={
+            <Layout>
+              <OrderStatusPage />
+            </Layout>
+          }
+        />
         <Route
           path="/user-profile"
           element={
